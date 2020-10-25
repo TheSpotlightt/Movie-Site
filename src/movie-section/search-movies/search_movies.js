@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PostersResult from '../movie-posters/get-movie-posters';
+import InfoPage from '../info-page/movies-info-page';
 
 function Result(props) {
     return (
@@ -42,7 +43,7 @@ export default function SearchMovies() {
                         {c.results && (
             
                             c.results.map((result, key) => (
-                                <div key={key} className="autocomplete-items ">
+                                <div key={key}>
                                     <Result 
                                         value={result.title}
                                     />
@@ -50,6 +51,12 @@ export default function SearchMovies() {
                                     <PostersResult 
                                         image={result.poster_path}
                                         altTitle={result.title}
+                                    />
+
+                                    <InfoPage
+                                        title={result.title}
+                                        releaseDate={result.release_date}
+                                        overview={result.overview}
                                     />
                                 </div>
                             ))

@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function PostersResult (props) {
     const posters = props.image;
     const altTitle = props.altTitle
+
     return (
-        <a href="#">
+        <Link to="/infoPage">
             <img src={`https://image.tmdb.org/t/p/w342/${posters}`} alt={altTitle} />
-        </a>
+        </Link>
     );
 }
