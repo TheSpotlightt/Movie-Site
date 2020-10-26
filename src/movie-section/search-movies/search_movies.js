@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PostersResult from '../movie-posters/get-movie-posters';
+import PostersResult from '../movie-posters/movie-posters';
 import InfoPage from '../info-page/movies-info-page';
 
 function Result(props) {
@@ -51,6 +51,7 @@ export default function SearchMovies() {
                                     <PostersResult 
                                         image={result.poster_path}
                                         altTitle={result.title}
+                                        infos={result.id}
                                     />
 
                                     <InfoPage

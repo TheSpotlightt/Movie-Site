@@ -12,7 +12,7 @@ ReactDOM.render(
 
       <Route path="/" component={App} exact  />
       
-      <InfoPage path="/infoPage" component={InfoPage} />
+      <InfoPage path="/movie/" component={InfoPage} />
 
     </Switch>
   </BrowserRouter>,

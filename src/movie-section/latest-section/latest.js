@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PostersResult from '../movie-posters/get-movie-posters';
+import PostersResult from '../movie-posters/movie-posters';
 
 class LatestMoviesSection extends React.Component {
     render() {
@@ -44,6 +44,7 @@ export default function LatestMovies() {
                                 <PostersResult 
                                     image={result.poster_path}
                                     altTitle={result.title}
+                                    infos={result.id}
                                 />
                             </div>
                         ))
