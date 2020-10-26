@@ -4,7 +4,7 @@ export default function InfoPage(props) {
     return (
         <div>
             <section>
-                <p>{props.value}</p>
+                <p>{props.title}</p>
                 <p>{props.releaseDate}</p>
                 <p>{props.overview}</p>
             </section>

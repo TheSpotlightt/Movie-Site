@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import InfoPage from './movie-section/info-page/movies-info-page';
+import InfoPage from './movie-section/info-page/get-infos';
 
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 
