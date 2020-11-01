@@ -46,10 +46,10 @@ export default function LatestMovies() {
                                     altTitle={result.title}
                                     infos={result.id}
                                 />
+
                             </div>
                         ))
                     )}
-
                 </div>
             ))}
         </div>
