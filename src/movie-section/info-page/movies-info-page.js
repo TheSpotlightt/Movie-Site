@@ -5,8 +5,8 @@ export default function InfoPage(props) {
         <div>
             <section>
                 <p>{props.title}</p>
-                <p>{props.releaseDate}</p>
                 <p>{props.overview}</p>
+                <p>{props.releaseDate}, {props.runTime}s </p>
             </section>
         </div>
     )

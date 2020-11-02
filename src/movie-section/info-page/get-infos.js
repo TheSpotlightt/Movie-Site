@@ -21,9 +21,12 @@ export default function GetInfos(props) {
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=d8007bb731f4937f50c8e7528e5c21e2&language=en-US`)
         .then(res => res.json())
-        .then(res => getTrailer(res))
+        .then(res => {
+            getTrailer(res)
+        })
+        .catch(error => console.log(error))
+        
     }, [movieID])
-    console.log(trailer);
 
     return (
         <div>
@@ -33,6 +36,7 @@ export default function GetInfos(props) {
                         title={index.title}
                         releaseDate={index.release_date}
                         overview={index.overview}
+                        runTime={index.runtime}
                     />
                 </div>
             ))}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { PostersImg } from './style'
+
 export default function PostersResult (props) {
     const posters = props.image;
     const altTitle = props.altTitle;
@@ -12,7 +14,7 @@ export default function PostersResult (props) {
                 pathname: `/movie/${movieID}`,
                 getMoviesInfo: `${movieID}`
             }}>
-                <img src={`https://image.tmdb.org/t/p/w342/${posters}`} alt={altTitle} />
+                <PostersImg src={`https://image.tmdb.org/t/p/w300/${posters}`} alt={altTitle} />
             </Link>
         </div>  
     )

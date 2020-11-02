@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PostersResult from '../movie-posters/movie-posters';
 
+import { SearchMovieContainer, SearchMovieInput, TileMovie } from './search-styles';
+
 function Result(props) {
     return (
-        <ul>
-            <li>
-                {props.value}
-            </li>
-        </ul>
+        <TileMovie>
+            {props.value}
+        </TileMovie>
     )
 }
 
@@ -32,11 +32,11 @@ export default function SearchMovies() {
 
     return (
         <div>
-                <input type="search" onChange={(e) => setValue(e.target.value)} autoFocus/>
+                <SearchMovieInput type="search" onChange={(e) => setValue(e.target.value)} placeholder="Search by Movie Title" autoFocus/>
 
                 {moviesArray.map((c, index) => ( 
             
-                    <div key={index}>
+                    <SearchMovieContainer key={index}>
             
                         {c.results && (
             
@@ -55,7 +55,7 @@ export default function SearchMovies() {
                             ))
                         )}
             
-                    </div>
+                    </SearchMovieContainer>
                 ))}
             </div>
 
