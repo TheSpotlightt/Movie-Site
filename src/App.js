@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import SearchMovies from './movie-section/search-movies/search_movies';
-import PopularMovies from './movie-section/popular-section/popular';
+import ChooseSection from './movie-section/choose-section/choose-section';
 
 function App() {
   return (
     <div>
-      <SearchMovies />
-      <PopularMovies />
+      <ChooseSection />
     </div>
   );
 }

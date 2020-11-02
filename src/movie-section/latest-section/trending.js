@@ -1,24 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import PostersResult from '../movie-posters/movie-posters';
 
-import { CardPosters } from './popular-styles';
+import SearchMovies from '../search-movies/search_movies';
+import ChooseSection from '../choose-section/choose-section';
 
-export default function LatestMovies() {
-    const [latest, setLatest] = useState('');
+import { CardPosters } from './trending-styles';
 
-    const latestArray = [latest];
+export default function TrendingMovies() {
+    const [trending, setTrending] = useState('');
+
+    const trendingArray = [trending];
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/latest?api_key=d8007bb731f4937f50c8e7528e5c21e2&language=en-US`)
+        fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=d8007bb731f4937f50c8e7528e5c21e2`)
         .then(res => res.json())
         .then(res => {
-            setLatest(res)
+            setTrending(res)
         });
     }, []);
 
-
     return (
         <div className="posters">
-            {latestArray.map((index, key) => (
+            <SearchMovies />
+            <ChooseSection />
+
+            {trendingArray.map((index, key) => (
 
                 <CardPosters key={key}>
 

@@ -1,30 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import PostersResult from '../movie-posters/movie-posters';
+import ReactPagination from 'react-js-pagination';
 
+import PostersResult from '../movie-posters/movie-posters';
+import SearchMovies from '../search-movies/search_movies';
+import ChooseSection from '../choose-section/choose-section';
+
+import '../footer/styles.css'
 import { CardPosters } from './popular-styles';
 
 export default function PopularMovies() {
     const [popular, setPopular] = useState('');
+    const [pageNumber, setPageNumber] = useState(1);
 
     const popularArray = [popular];
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=d8007bb731f4937f50c8e7528e5c21e2&language=en-US&page=1`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=d8007bb731f4937f50c8e7528e5c21e2&language=en-US&page=${pageNumber}`)
         .then(res => res.json())
         .then(res => {
             setPopular(res)
         });
-    }, []);
+    }, [pageNumber]);
 
+    const handlePageChange = (activePage) => {
+        setPageNumber(activePage)
+    }
 
     return (
         <div className="posters">
+            <SearchMovies />
+            <ChooseSection />
+
             {popularArray.map((index, key) => (
+                <div key={key}>
+                    <CardPosters>
+                        {index.results && (
 
-                <CardPosters key={key}>
-
-                    {index.results && (
-
-                        index.results.map((result) => (
+                            index.results.map((result) => (
 
                             <div key={result.id}>
                                 <PostersResult 
@@ -34,10 +45,23 @@ export default function PopularMovies() {
                                 />
 
                             </div>
-                        ))
-                    )}
-                </CardPosters>
+                            ))
+                        )}
+                    </CardPosters>
+                    
+                    <footer>
+                        <ReactPagination
+                            activePage={pageNumber}
+                            itemsCountPerPage={1}
+                            totalItemsCount={500}
+                            containerClassName={"pagination"}
+                            pageRangeDisplayed={5}
+                            onChange={handlePageChange.bind()}
+                        />
+                    </footer>
+                </div>
             ))}
+
         </div>
     )
 }

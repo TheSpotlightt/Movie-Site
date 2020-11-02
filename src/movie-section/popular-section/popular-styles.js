@@ -5,5 +5,5 @@ export const CardPosters = Styled.div `
     flex-wrap: wrap;
     justify-content: space-between;
 
-    padding-top: 5rem;
+    margin-top: 5rem;
 `;
