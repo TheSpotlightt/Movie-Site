@@ -1,7 +1,7 @@
 import Styled from 'styled-components';
 
 export const ChooseLinksStyles = Styled.div `
-    font-size: 1.7rem;
+    font-size: 1.8rem;
 
     text-decoration: none;
 
@@ -17,4 +17,5 @@ export const Container = Styled.div `
 export const Img = Styled.img `
     margin-top: 3rem;
     margin-left: 1rem;
+    width: 2.5rem;
 `;

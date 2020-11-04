@@ -45,7 +45,6 @@ export default function ChooseSection() {
             <Link to="/search">
                 <Img 
                     src={SearchIcon}
-                    width={20}
                     alt="Search Icon"
                 />
             </Link>
