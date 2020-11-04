@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import ReactPagination from 'react-js-pagination';
 
 import PostersResult from '../movie-posters/movie-posters';
-import SearchMovies from '../search-movies/search_movies';
 import ChooseSection from '../choose-section/choose-section';
 
 import { CardPosters } from './upcoming-styles';
@@ -26,7 +25,6 @@ export default function UpComingMovies() {
 
     return (
         <div className="posters">
-            <SearchMovies />
             <ChooseSection />
             
             {upComingArray.map((index, key) => (
@@ -50,9 +48,11 @@ export default function UpComingMovies() {
 
                     <footer>
                         <ReactPagination
+                            lastPageText={'18'}
+                            firstPageText={'1'}
                             activePage={pageNumber}
                             itemsCountPerPage={1}
-                            totalItemsCount={500}
+                            totalItemsCount={18}
                             containerClassName={"pagination"}
                             pageRangeDisplayed={5}
                             onChange={handlePageChange.bind()}

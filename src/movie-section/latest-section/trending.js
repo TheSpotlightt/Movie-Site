@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PostersResult from '../movie-posters/movie-posters';
 
-import SearchMovies from '../search-movies/search_movies';
 import ChooseSection from '../choose-section/choose-section';
 
 import { CardPosters } from './trending-styles';
@@ -20,7 +19,6 @@ export default function TrendingMovies() {
 
     return (
         <div className="posters">
-            <SearchMovies />
             <ChooseSection />
 
             {trendingArray.map((index, key) => (

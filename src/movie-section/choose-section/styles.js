@@ -8,3 +8,13 @@ export const ChooseLinksStyles = Styled.div `
     margin-top: 3rem;
     margin-left: 1rem;
 `
+
+export const Container = Styled.div `
+    display: flex !important;
+    justify-content: space-between;
+`
+
+export const Img = Styled.img `
+    margin-top: 3rem;
+    margin-left: 1rem;
+`;

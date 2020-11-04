@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ReactPagination from 'react-js-pagination';
 
+
 import PostersResult from '../movie-posters/movie-posters';
-import SearchMovies from '../search-movies/search_movies';
 import ChooseSection from '../choose-section/choose-section';
 
 import '../footer/styles.css'
@@ -27,9 +27,7 @@ export default function PopularMovies() {
 
     return (
         <div className="posters">
-            <SearchMovies />
             <ChooseSection />
-
             {popularArray.map((index, key) => (
                 <div key={key}>
                     <CardPosters>
@@ -51,12 +49,17 @@ export default function PopularMovies() {
                     
                     <footer>
                         <ReactPagination
+                            prevPageText={'Prev'}
+                            nextPageText={'Next'}
+                            lastPageText={'500'}
+                            firstPageText={'1'}
                             activePage={pageNumber}
                             itemsCountPerPage={1}
                             totalItemsCount={500}
                             containerClassName={"pagination"}
                             pageRangeDisplayed={5}
                             onChange={handlePageChange.bind()}
+
                         />
                     </footer>
                 </div>
