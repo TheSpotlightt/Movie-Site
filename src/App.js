@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import ChooseSection from './movie-section/choose-section/choose-section';
+
+import PopularMovies from './movie-section/popular-section/popular';
 
 function App() {
   return (
     <div>
-      <ChooseSection />
+      <PopularMovies />
     </div>
   );
 }

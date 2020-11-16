@@ -16,10 +16,9 @@ function Result(props) {
 export default function SearchMovies() {
     const [movies, setMovies] = useState([]);
     const moviesArray = [movies];
-    // const [pageNumber, setPageNumber] = useState(1);
 
     const [value, setValue] = useState([]);
-
+    
     useEffect(() => {
         const fetchData = async () => {
             await fetch(`https://api.themoviedb.org/3/search/movie?api_key=d8007bb731f4937f50c8e7528e5c21e2&language=en-US&query=${value}&page=1&include_adult=false`)
@@ -39,7 +38,9 @@ export default function SearchMovies() {
 
     return (
     <div>
-        <SearchMovieInput type="text" onChange={handleInputSearch} placeholder="Search by Movie Title" autoFocus/>
+        <label>
+            <SearchMovieInput type="text" onChange={handleInputSearch} placeholder="Search by Movie Title" className="inputClass" autoFocus/>
+        </label>
 
         {moviesArray.map((c, index) => ( 
             <div key={index}>
@@ -64,6 +65,7 @@ export default function SearchMovies() {
                 </SearchMovieContainer>
             </div>
         ))}
+
     </div>
 
 )

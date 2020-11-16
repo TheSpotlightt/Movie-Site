@@ -1,12 +1,14 @@
 import React from 'react';
+import { Paragraph, Title } from './styles';
 
 export default function InfoPage(props) {
+
     return (
         <div>
             <section>
-                <p>{props.title}</p>
-                <p>{props.overview}</p>
-                <p>{props.releaseDate}, {props.runTime}s </p>
+                <Title>{props.title}</Title>
+                <Paragraph>{props.overview}</Paragraph>
+                <Paragraph>{props.releaseDate}, {props.runTime}s </Paragraph>
             </section>
         </div>
     )

@@ -8,12 +8,11 @@ export const SearchMovieContainer = Styled.div `
 
 export const SearchMovieInput = Styled.input `
     width: 100%;
-    margin-top: 1rem;
-
+    margin-top: 5rem;
+    font-size: 1.7rem;
     padding: 2rem;
 
     border-radius: 5rem;
-
     border: .1rem solid black;
 
     &::placeholder {

@@ -24,7 +24,7 @@ export default function PopularMovies() {
     const handlePageChange = (activePage) => {
         setPageNumber(activePage)
     }
-
+    
     return (
         <div className="posters">
             <ChooseSection />
@@ -59,7 +59,6 @@ export default function PopularMovies() {
                             containerClassName={"pagination"}
                             pageRangeDisplayed={5}
                             onChange={handlePageChange.bind()}
-
                         />
                     </footer>
                 </div>

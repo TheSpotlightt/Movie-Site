@@ -3,7 +3,7 @@ import InfoPage from './movies-info-page';
 
 export default function GetInfos(props) {
     const [moviesInfo, setMoviesInfo] = useState([]);
-    const moviesInfoArray = [moviesInfo]
+    const moviesInfoArray = [moviesInfo];
     const movieID = props.location.getMoviesInfo;
     
     useEffect(() => {
@@ -14,7 +14,7 @@ export default function GetInfos(props) {
         })
         .catch(error => console.log(error));
     }, [movieID]);
-
+    
     const [trailer, getTrailer] = useState([]);
     const trailerArray = [trailer];
 
@@ -26,21 +26,19 @@ export default function GetInfos(props) {
         })
         .catch(error => console.log(error))
         
-    }, [movieID])
+    }, [movieID]);
+
 
     return (
         <div>
             {moviesInfoArray.map((index, key) => (
-                
                 <div key={key}>
-
                     <InfoPage
                         title={index.title}
                         releaseDate={index.release_date}
                         overview={index.overview}
                         runTime={index.runtime}
                     />
-
                 </div>
             ))}
 
@@ -53,7 +51,7 @@ export default function GetInfos(props) {
                             <div key={result.id}>
 
                                 <iframe title="Trailer" 
-                                width="560" height="315" 
+                                width="441" height="315" 
                                 src={`https://www.youtube.com/embed/${result.key}`} 
                                 frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowFullScreen />

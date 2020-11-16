@@ -12,6 +12,14 @@ export const ChooseLinksStyles = Styled.div `
 export const Container = Styled.div `
     display: flex !important;
     justify-content: space-between;
+
+    border-bottom: .2rem solid black;
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0rem;
+
+    background-color: #fff;
 `
 
 export const Img = Styled.img `

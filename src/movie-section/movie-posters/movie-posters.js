@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import { PostersImg } from './style'
 
 export default function PostersResult (props) {
     const posters = props.image;
     const altTitle = props.altTitle;
     const movieID = props.infos;
-    
+
     return (
         <div>
             <Link to={{

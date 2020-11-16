@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import SearchIcon from '../../images/loupe.svg';
 import { ChooseLinksStyles, Container, Img } from './styles';
@@ -40,7 +40,6 @@ export default function ChooseSection() {
                     paddingRight: 20, 
                     textDecoration: 'none',
                 }}>UpComing</NavLink>
-
             </ChooseLinksStyles>
             <Link to="/search">
                 <Img 
