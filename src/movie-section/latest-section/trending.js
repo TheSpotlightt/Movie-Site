@@ -10,11 +10,15 @@ export default function TrendingMovies() {
 
     const trendingArray = [trending];
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=d8007bb731f4937f50c8e7528e5c21e2`)
-        .then(res => res.json())
-        .then(res => {
-            setTrending(res)
-        });
+        (
+            async () => {
+                await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=d8007bb731f4937f50c8e7528e5c21e2`)
+                .then(res => res.json())
+                .then(res => {
+                    setTrending(res)
+                });
+            }
+        )();
     }, []);
 
     return (

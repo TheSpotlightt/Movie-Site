@@ -12,11 +12,15 @@ export default function UpComingMovies() {
 
     const upComingArray = [upComing];
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=d8007bb731f4937f50c8e7528e5c21e2&language=en-US&page=${pageNumber}`)
-        .then(res => res.json())
-        .then(res => {
-            setUpComing(res)
-        });
+        (
+            async () => {
+                fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=d8007bb731f4937f50c8e7528e5c21e2&language=en-US&page=${pageNumber}`)
+                .then(res => res.json())
+                .then(res => {
+                    setUpComing(res)
+                });
+            }
+        )();
     }, [pageNumber]);
     
     const handlePageChange = (activePage) => {

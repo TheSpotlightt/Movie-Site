@@ -8,7 +8,7 @@ import LatestMovies from './movie-section/latest-section/trending';
 import UpComingMovies from './movie-section/upcoming-section/upcoming';
 import SearchMovies from './movie-section/search-movies/search_movies';
 
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 
 
