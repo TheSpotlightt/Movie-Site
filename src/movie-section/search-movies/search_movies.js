@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import PostersResult from '../movie-posters/movie-posters';
 
 import { SearchMovieContainer, SearchMovieInput, TileMovie } from './search-styles';
+import { Redirect } from 'react-router-dom';
 
 function Result(props) {
     return (
@@ -18,7 +19,6 @@ export default function SearchMovies(props) {
     const moviesArray = [movies];
 
     const [value, setValue] = useState([]);
-
 
     useEffect(() => {
         const fetchData = async () => {
@@ -40,33 +40,45 @@ export default function SearchMovies(props) {
 
     return (
     <div>
-        <label>
-            <SearchMovieInput type="text" onChange={handleInputSearch} value={value} placeholder="Search by Movie Title" className="inputClass" autoFocus/>
-        </label>
+        <form>
+            <SearchMovieInput type="text" onChange={handleInputSearch} placeholder="Search by Movie Title" className="inputClass" autoFocus/>
+        </form>
 
-        {moviesArray.map((c, index) => ( 
-            <div key={index}>
-                <SearchMovieContainer>
-                    
-                    {c.results && (
+        {
+            moviesArray.map((c, index) => ( 
+                <div key={index}>
+                    <SearchMovieContainer>
+                        
+                        {
+                            c.results && (
 
-                        c.results.map((result, key) => (
-                            <div key={key}>
-                                <Result 
-                                    value={result.title}
-                                />
+                                c.results.map((result, key) => (
+                                    <div key={key}>
+                                        <Result 
+                                            value={result.title}
+                                        />
 
-                                <PostersResult 
-                                    image={result.poster_path}
-                                    altTitle={result.title}
-                                    infos={result.id}
-                                />
-                            </div>
-                        ))
-                    )}
-                </SearchMovieContainer>
-            </div>
-        ))}
+                                        <PostersResult 
+                                            image={result.poster_path}
+                                            altTitle={result.title}
+                                            infos={result.id}
+                                        />
+
+                                        {
+                                            value.length > 2 &&
+                                            <Redirect to={{
+                                                pathname: '/search',
+                                                state:  `${value}`
+                                            }} />
+                                        }
+                                    </div>
+                                ))
+                            )
+                        }
+                    </SearchMovieContainer>
+                </div>
+            ))
+        }
 
     </div>
 

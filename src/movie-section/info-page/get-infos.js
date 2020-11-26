@@ -37,39 +37,46 @@ export default function GetInfos(props) {
 
     }, [movieID]);
 
-
     return (
         <div>
-            {moviesInfoArray.map((index, key) => (
-                <div key={key}>
-                    <InfoPage
-                        title={index.title}
-                        releaseDate={index.release_date}
-                        overview={index.overview}
-                        runTime={index.runtime}
-                    />
-                </div>
-            ))}
+            {
+                moviesInfoArray.map((index, key) => (
+                    <div key={key}>
 
-            {trailerArray.map((index, key) => (
-                <div key={key}>
-                    {index.results && (
+                        <InfoPage
+                            title={index.title}
+                            releaseDate={index.release_date}
+                            overview={index.overview}
+                            runTime={index.runtime}
+                        />
 
-                        index.results.map(result => (
+                    </div>
+                ))
+            }
 
-                            <div key={result.id}>
+            {
+                trailerArray.map((index, key) => (
+                    <div key={key}>
+                        {
+                            index.results && (
 
-                                <iframe title="Trailer" 
-                                width="441" height="315" 
-                                src={`https://www.youtube.com/embed/${result.key}`} 
-                                frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowFullScreen />
-                                
-                            </div>
-                        ))
-                    )}
-                </div>
-            ))}
+                                index.results.map(result => (
+                                    <div key={result.id}>
+
+                                        <iframe title="Trailer" 
+                                            width="441" height="315" 
+                                            src={`https://www.youtube.com/embed/${result.key}`} 
+                                            frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowFullScreen
+                                        />
+
+                                    </div>
+                                ))
+                            )
+                        }
+                    </div>
+                ))
+            }
         </div>  
     )
 }

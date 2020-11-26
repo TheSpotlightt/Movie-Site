@@ -25,26 +25,31 @@ export default function TrendingMovies() {
         <div className="posters">
             <ChooseSection />
 
-            {trendingArray.map((index, key) => (
+            {
+                trendingArray.map((index, key) => (
 
-                <CardPosters key={key}>
+                    <CardPosters key={key}>
 
-                    {index.results && (
+                        {
+                            index.results && (
 
-                        index.results.map((result) => (
+                                index.results.map((result) => (
 
-                            <div key={result.id}>
-                                <PostersResult 
-                                    image={result.poster_path}
-                                    altTitle={result.title}
-                                    infos={result.id}
-                                />
+                                    <div key={result.id}>
+                                        <PostersResult 
+                                            image={result.poster_path}
+                                            altTitle={result.title}
+                                            infos={result.id}
+                                        />
 
-                            </div>
-                        ))
-                    )}
-                </CardPosters>
-            ))}
+                                    </div>
+                                ))
+                            )
+                        }
+                        
+                    </CardPosters>
+                ))
+            }
         </div>
     )
 }

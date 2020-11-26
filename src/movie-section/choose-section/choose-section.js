@@ -24,6 +24,7 @@ export default function ChooseSection() {
                     color: "#918888", 
                     fontWeight: "bold"
                 }} 
+
                 style={{
                     color: "black",
                     paddingRight: 20, 
@@ -35,12 +36,14 @@ export default function ChooseSection() {
                     color: "#918888", 
                     fontWeight: "bold",
                 }}
+
                 style={{
                     color: "black",
                     paddingRight: 20, 
                     textDecoration: 'none',
                 }}>UpComing</NavLink>
             </ChooseLinksStyles>
+            
             <Link to="/search">
                 <Img 
                     src={SearchIcon}

@@ -31,39 +31,41 @@ export default function UpComingMovies() {
         <div className="posters">
             <ChooseSection />
             
-            {upComingArray.map((index, key) => (
-                <div key={key}>
-                    <CardPosters>
+            {
+                upComingArray.map((index, key) => (
+                    <div key={key}>
+                        <CardPosters>
+                            {
+                                index.results && (
+                                    index.results.map((result) => (
 
-                        {index.results && (
+                                        <div key={result.id}>
+                                            <PostersResult 
+                                                image={result.poster_path}
+                                                altTitle={result.title}
+                                                infos={result.id}
+                                            />
+                                        </div>
+                                    ))
+                                )
+                            }
+                        </CardPosters>
 
-                            index.results.map((result) => (
-
-                                <div key={result.id}>
-                                    <PostersResult 
-                                        image={result.poster_path}
-                                        altTitle={result.title}
-                                        infos={result.id}
-                                    />
-                                </div>
-                            ))
-                        )}
-                    </CardPosters>
-
-                    <footer>
-                        <ReactPagination
-                            lastPageText={'18'}
-                            firstPageText={'1'}
-                            activePage={pageNumber}
-                            itemsCountPerPage={1}
-                            totalItemsCount={18}
-                            containerClassName={"pagination"}
-                            pageRangeDisplayed={5}
-                            onChange={handlePageChange.bind()}
-                        />
-                    </footer>
-                </div>
-            ))}
+                        <footer>
+                            <ReactPagination
+                                lastPageText={'18'}
+                                firstPageText={'1'}
+                                activePage={pageNumber}
+                                itemsCountPerPage={1}
+                                totalItemsCount={18}
+                                containerClassName={"pagination"}
+                                pageRangeDisplayed={5}
+                                onChange={handlePageChange.bind()}
+                            />
+                        </footer>
+                    </div>
+                ))
+            }
         </div>
     )
 }
