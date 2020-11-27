@@ -8,7 +8,7 @@ export const Title = Styled.h1 `
 `;
 
 export const Paragraph = Styled.p `
-    font-size: 1.6rem;
+    font-size: 1.7rem;
 `
 
 export const Img = Styled.img `
@@ -17,8 +17,22 @@ export const Img = Styled.img `
     margin-right: 2rem;
     margin-top: 5rem;
     
-    @media screen and (max-width: 50rem) {
+    @media only screen and (min-width: 200px) {
         float: none;
+        margin-right: 0rem;
+    }
+
+    @media only screen and (min-width: 400px) {
+        float: none;
+        margin-right: 0rem;
+    }
+
+    @media only screen and (min-width: 768px) {
+        float: none;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        float: left;
     }
 
 `;
@@ -31,13 +45,58 @@ export const Iframe = Styled.iframe `
     width: 80rem;
     height: 40rem;
 
-    @media screen and (max-width: 50rem) {
+    @media only screen and (min-width: 200px) {
+        position: absolute;
+        top: 95rem;
+        left: 1rem;
+
+        width: 34rem;
+        height: 20rem;
+    }
+
+    @media only screen and (min-width: 375px) {
+        position: absolute;
+        top: 90rem;
+        left: 1rem;
+
+        width: 36rem;
+        height: 20rem;
+    }
+
+    @media only screen and (min-width: 400px) {
+        position: absolute;
+        top: 85rem;
+        left: 1rem;
+
+        width: 42rem;
+        height: 30rem;
+    }
+
+    @media only screen and (min-width: 768px) {
         position: absolute;
         top: 80rem;
-        left: 2rem;
+        left: 4rem;
 
-        width: 32rem;
-        height: 20rem;
+        width: 70rem;
+        height: 35rem;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        position: absolute;
+        top: 40rem;
+        left: 38rem;
+
+        width: 60rem;
+        height: 40rem;
+    }
+
+    @media only screen and (min-width: 1440px) {
+        position: absolute;
+        top: 40rem;
+        left: 38rem;
+
+        width: 90rem;
+        height: 50rem;
     }
 `;
 
