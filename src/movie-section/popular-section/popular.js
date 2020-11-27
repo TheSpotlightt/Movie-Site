@@ -31,8 +31,8 @@ export default function PopularMovies() {
     
     return (
         <div className="posters">
-            <ChooseSection />
-                        
+            <ChooseSection /> 
+            
             {
                 popularArray.map((index, key) => (
                     <div key={key}>

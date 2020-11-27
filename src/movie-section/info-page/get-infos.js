@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import InfoPage from './movies-info-page';
 
+import { Iframe} from './styles';
+
 export default function GetInfos(props) {
     const [moviesInfo, setMoviesInfo] = useState([]);
     const moviesInfoArray = [moviesInfo];
@@ -42,18 +44,20 @@ export default function GetInfos(props) {
             {
                 moviesInfoArray.map((index, key) => (
                     <div key={key}>
-
+                        {console.log(index)}
                         <InfoPage
                             title={index.title}
                             releaseDate={index.release_date}
                             overview={index.overview}
+
                             runTime={index.runtime}
+                            posters={index.poster_path}
+                            altTitle={index.title}
                         />
 
                     </div>
                 ))
             }
-
             {
                 trailerArray.map((index, key) => (
                     <div key={key}>
@@ -63,8 +67,7 @@ export default function GetInfos(props) {
                                 index.results.map(result => (
                                     <div key={result.id}>
 
-                                        <iframe title="Trailer" 
-                                            width="441" height="315" 
+                                        <Iframe title="Trailer" 
                                             src={`https://www.youtube.com/embed/${result.key}`} 
                                             frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                             allowFullScreen

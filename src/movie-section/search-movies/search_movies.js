@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import PostersResult from '../movie-posters/movie-posters';
 
 import { SearchMovieContainer, SearchMovieInput, TileMovie } from './search-styles';
-import { Redirect } from 'react-router-dom';
 
 function Result(props) {
     return (
@@ -19,7 +18,8 @@ export default function SearchMovies(props) {
     const moviesArray = [movies];
 
     const [value, setValue] = useState([]);
-
+    const ss = props.location.state;
+    console.log(ss)
     useEffect(() => {
         const fetchData = async () => {
             await fetch(`https://api.themoviedb.org/3/search/movie?api_key=d8007bb731f4937f50c8e7528e5c21e2&language=en-US&query=${value}&page=1&include_adult=false`)
@@ -41,7 +41,7 @@ export default function SearchMovies(props) {
     return (
     <div>
         <form>
-            <SearchMovieInput type="text" onChange={handleInputSearch} placeholder="Search by Movie Title" className="inputClass" autoFocus/>
+            <SearchMovieInput type="search" onChange={handleInputSearch} placeholder="Search by Movie Title" className="inputClass" autoFocus/>
         </form>
 
         {
@@ -63,14 +63,6 @@ export default function SearchMovies(props) {
                                             altTitle={result.title}
                                             infos={result.id}
                                         />
-
-                                        {
-                                            value.length > 2 &&
-                                            <Redirect to={{
-                                                pathname: '/search',
-                                                state:  `${value}`
-                                            }} />
-                                        }
                                     </div>
                                 ))
                             )
