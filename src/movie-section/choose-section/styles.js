@@ -22,8 +22,30 @@ export const Container = Styled.div `
     background-color: #fff;
 `
 
-export const Img = Styled.img `
+export const ImgSearch = Styled.img `
     margin-top: 3rem;
     margin-left: 1rem;
     width: 2.5rem;
 `;
+
+export const ImgHome = Styled.img `
+    margin-top: 3rem;
+    margin-left: 1rem;
+    width: 2.5rem;
+`;
+
+
+export const ContainerHeader = Styled.div `
+    display: flex !important;
+    justify-content: space-between;
+
+    border-bottom: .1rem solid black;
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0rem;
+
+    background-color: #fff;
+`;
+
+

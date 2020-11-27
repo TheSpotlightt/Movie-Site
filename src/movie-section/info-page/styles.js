@@ -4,7 +4,6 @@ export const Title = Styled.h1 `
     font-size: 2rem;
 
     margin-top: 5rem;;
-
 `;
 
 export const Paragraph = Styled.p `
@@ -14,7 +13,8 @@ export const Paragraph = Styled.p `
 export const Img = Styled.img `
     float: left;
 
-    margin-right: 2rem;
+    margin-right: 5rem;
+
     margin-top: 5rem;
     
     @media only screen and (min-width: 200px) {
@@ -33,6 +33,9 @@ export const Img = Styled.img `
 
     @media only screen and (min-width: 1024px) {
         float: left;
+        margin-right: 5rem;
+
+        margin-top: 5rem;
     }
 
 `;
@@ -92,8 +95,8 @@ export const Iframe = Styled.iframe `
 
     @media only screen and (min-width: 1440px) {
         position: absolute;
-        top: 40rem;
-        left: 38rem;
+        top: 60rem;
+        left: 45rem;
 
         width: 90rem;
         height: 50rem;
@@ -102,7 +105,12 @@ export const Iframe = Styled.iframe `
 
 export const Header = Styled.header `
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 
     border-bottom: .1rem solid black;
+
+    position: sticky;
+    top: 0rem;
+
+    background-color: #ffffff;
 `;

@@ -2,12 +2,13 @@ import React from 'react';
 import { Paragraph, Title, Img, Header } from './styles';
 
 import SearchMovies from '../choose-section/search-section';
-
+import Home from '../choose-section/home'
 export default function InfoPage(props) {
 
     return (
         <div>
             <Header>
+                <Home />
                 <SearchMovies />
             </Header>
             <Img 
