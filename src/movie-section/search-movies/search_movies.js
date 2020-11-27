@@ -18,8 +18,7 @@ export default function SearchMovies(props) {
     const moviesArray = [movies];
 
     const [value, setValue] = useState([]);
-    const ss = props.location.state;
-    console.log(ss)
+
     useEffect(() => {
         const fetchData = async () => {
             await fetch(`https://api.themoviedb.org/3/search/movie?api_key=d8007bb731f4937f50c8e7528e5c21e2&language=en-US&query=${value}&page=1&include_adult=false`)

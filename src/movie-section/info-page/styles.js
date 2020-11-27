@@ -95,8 +95,8 @@ export const Iframe = Styled.iframe `
 
     @media only screen and (min-width: 1440px) {
         position: absolute;
-        top: 60rem;
-        left: 45rem;
+        top: 50rem;
+        left: 50rem;
 
         width: 90rem;
         height: 50rem;

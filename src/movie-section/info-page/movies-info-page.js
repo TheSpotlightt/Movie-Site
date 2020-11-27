@@ -2,7 +2,8 @@ import React from 'react';
 import { Paragraph, Title, Img, Header } from './styles';
 
 import SearchMovies from '../choose-section/search-section';
-import Home from '../choose-section/home'
+import Home from '../choose-section/home';
+
 export default function InfoPage(props) {
 
     return (
@@ -19,6 +20,7 @@ export default function InfoPage(props) {
                 <Paragraph>{props.overview}</Paragraph>
                 <Paragraph>{props.releaseDate}, Duration: {props.runTime}s </Paragraph>
             </section>
+
         </div>
     )
 }

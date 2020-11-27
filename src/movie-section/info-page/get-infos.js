@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import InfoPage from './movies-info-page';
 
 import { Iframe} from './styles';
+import ImageGallery from '../image-gallery/gallery';
 
 export default function GetInfos(props) {
     const [moviesInfo, setMoviesInfo] = useState([]);
     const moviesInfoArray = [moviesInfo];
     const movieID = props.location.state;
-
+    
     useEffect(() => {
         (        
             async () => {
@@ -58,6 +59,7 @@ export default function GetInfos(props) {
                     </div>
                 ))
             }
+            
             {
                 trailerArray.map((index, key) => (
                     <div key={key}>
@@ -72,7 +74,6 @@ export default function GetInfos(props) {
                                             frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                             allowFullScreen
                                         />
-
                                     </div>
                                 ))
                             )
@@ -80,6 +81,10 @@ export default function GetInfos(props) {
                     </div>
                 ))
             }
+
+            <ImageGallery 
+                postersID={movieID}
+            />
         </div>  
     )
 }
