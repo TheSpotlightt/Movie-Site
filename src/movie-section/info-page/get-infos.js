@@ -45,7 +45,6 @@ export default function GetInfos(props) {
             {
                 moviesInfoArray.map((index, key) => (
                     <div key={key}>
-                    
                         <InfoPage
                             title={index.title}
                             releaseDate={index.release_date}

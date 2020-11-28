@@ -29,14 +29,20 @@ export default function ImageGallery (props) {
         )()
     }, [postersID])
 
+    const responsive = {
+        0: { items: 1},
+        1024: { items: 1 }
+    }
 
     return (
         <GalleryContainer>
             <AliceCarousel
                 items={images}
                 autoPlay
-                autoPlayInterval={5000}
+                autoPlayInterval={3000}
                 infinite
+                responsive={responsive}
+                animationDuration="800"
             />
         </GalleryContainer>
     )

@@ -1,7 +1,7 @@
 import Styled from 'styled-components';
 
 export const ChooseLinksStyles = Styled.div `
-    font-size: 1.8rem;
+    font-size: 1.9rem;
 
     text-decoration: none;
 
