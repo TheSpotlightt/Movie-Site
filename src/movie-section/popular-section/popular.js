@@ -5,7 +5,9 @@ import PostersResult from '../movie-posters/movie-posters';
 import ChooseSection from '../choose-section/choose-section';
 
 import '../footer/styles.css'
-import { CardPosters } from './popular-styles';
+import { CardPosters , Container} from './popular-styles';
+
+import { Pulse, FadeInDown } from 'animate-css-styled-components';
 
 export default function PopularMovies() {
     const [popular, setPopular] = useState('');
@@ -30,47 +32,51 @@ export default function PopularMovies() {
     }
     
     return (
-        <div className="posters">
-            <ChooseSection /> 
-            
-            {
-                popularArray.map((index, key) => (
-                    <div key={key}>
-                        <CardPosters>
-                            {
-                                index.results && (
+        <Container className="posters">
+            <FadeInDown duration=".8s" delay=".3s">
+                <ChooseSection /> 
+            </FadeInDown>
+        
+            <Pulse duration=".8s" delay="0s">
+                    
+                    {
+                        popularArray.map((index, key) => (
+                            <div key={key}>
+                                <CardPosters>
+                                    {
+                                        index.results && (
 
-                                    index.results.map((result) => (
-                                        <div key={result.id}>
-                                            <PostersResult 
-                                                image={result.poster_path}
-                                                altTitle={result.title}
-                                                infos={result.id}
-                                            />
-                                        </div>
-                                    ))
-                                )
-                            }
-                        </CardPosters>
-                        
-                        <footer>
-                            <ReactPagination
-                                prevPageText={'Prev'}
-                                nextPageText={'Next'}
-                                lastPageText={'500'}
-                                firstPageText={'1'}
-                                activePage={pageNumber}
-                                itemsCountPerPage={1}
-                                totalItemsCount={500}
-                                containerClassName={"pagination"}
-                                pageRangeDisplayed={5}
-                                onChange={handlePageChange.bind()}
-                            />
-                        </footer>
-                    </div>
-                ))
-            }
-
-        </div>
+                                            index.results.map((result) => (
+                                                <div key={result.id}>
+                                                    <PostersResult 
+                                                        image={result.poster_path}
+                                                        altTitle={result.title}
+                                                        infos={result.id}
+                                                    />
+                                                </div>
+                                            ))
+                                        )
+                                    }
+                                </CardPosters>
+                                
+                                <footer>
+                                    <ReactPagination
+                                        prevPageText={'Prev'}
+                                        nextPageText={'Next'}
+                                        lastPageText={'500'}
+                                        firstPageText={'1'}
+                                        activePage={pageNumber}
+                                        itemsCountPerPage={1}
+                                        totalItemsCount={500}
+                                        containerClassName={"pagination"}
+                                        pageRangeDisplayed={5}
+                                        onChange={handlePageChange.bind()}
+                                    />
+                                </footer>
+                            </div>
+                        ))
+                    }
+            </Pulse>
+        </Container>
     )
 }

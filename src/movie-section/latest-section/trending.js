@@ -3,7 +3,9 @@ import PostersResult from '../movie-posters/movie-posters';
 
 import ChooseSection from '../choose-section/choose-section';
 
-import { CardPosters } from './trending-styles';
+import { CardPosters, Container } from './trending-styles';
+
+import { Pulse, FadeInDown } from 'animate-css-styled-components';
 
 export default function TrendingMovies() {
     const [trending, setTrending] = useState('');
@@ -22,34 +24,38 @@ export default function TrendingMovies() {
     }, []);
 
     return (
-        <div className="posters">
-            <ChooseSection />
+        <Container className="posters">
+            <FadeInDown duration=".8s" delay=".3s">
+                <ChooseSection />
+            </FadeInDown>
 
-            {
-                trendingArray.map((index, key) => (
+            <Pulse duration=".8s" delay="0s">
+                {
+                    trendingArray.map((index, key) => (
 
-                    <CardPosters key={key}>
+                        <CardPosters key={key}>
 
-                        {
-                            index.results && (
+                            {
+                                index.results && (
 
-                                index.results.map((result) => (
+                                    index.results.map((result) => (
 
-                                    <div key={result.id}>
-                                        <PostersResult 
-                                            image={result.poster_path}
-                                            altTitle={result.title}
-                                            infos={result.id}
-                                        />
+                                        <div key={result.id}>
+                                            <PostersResult 
+                                                image={result.poster_path}
+                                                altTitle={result.title}
+                                                infos={result.id}
+                                            />
 
-                                    </div>
-                                ))
-                            )
-                        }
-                        
-                    </CardPosters>
-                ))
-            }
-        </div>
+                                        </div>
+                                    ))
+                                )
+                            }
+                            
+                        </CardPosters>
+                    ))
+                }
+            </Pulse>
+        </Container>
     )
 }

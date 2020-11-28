@@ -1,13 +1,13 @@
 import Styled from 'styled-components';
 
 export const Title = Styled.h1 `
-    font-size: 2rem;
+    font-size: 3rem;
 
     margin-top: 5rem;;
 `;
 
 export const Paragraph = Styled.p `
-    font-size: 1.7rem;
+    font-size: 1.8rem;
 `
 
 export const Img = Styled.img `
@@ -16,7 +16,7 @@ export const Img = Styled.img `
     margin-right: 5rem;
 
     margin-top: 5rem;
-    
+
     @media only screen and (min-width: 200px) {
         float: none;
         margin-right: 0rem;

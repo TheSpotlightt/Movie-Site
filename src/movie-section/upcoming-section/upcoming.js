@@ -4,7 +4,9 @@ import ReactPagination from 'react-js-pagination';
 import PostersResult from '../movie-posters/movie-posters';
 import ChooseSection from '../choose-section/choose-section';
 
-import { CardPosters } from './upcoming-styles';
+import { CardPosters, Container} from './upcoming-styles';
+
+import { Pulse, FadeInDown } from 'animate-css-styled-components';
 
 export default function UpComingMovies() {
     const [upComing, setUpComing] = useState('');
@@ -28,44 +30,48 @@ export default function UpComingMovies() {
     }
 
     return (
-        <div className="posters">
-            <ChooseSection />
+        <Container className="posters">
+            <FadeInDown duration=".8s" delay=".3s">
+                <ChooseSection />
+            </FadeInDown>
             
-            {
-                upComingArray.map((index, key) => (
-                    <div key={key}>
-                        <CardPosters>
-                            {
-                                index.results && (
-                                    index.results.map((result) => (
+            <Pulse duration=".8s" delay="0s">
+                {
+                    upComingArray.map((index, key) => (
+                        <div key={key}>
+                            <CardPosters>
+                                {
+                                    index.results && (
+                                        index.results.map((result) => (
 
-                                        <div key={result.id}>
-                                            <PostersResult 
-                                                image={result.poster_path}
-                                                altTitle={result.title}
-                                                infos={result.id}
-                                            />
-                                        </div>
-                                    ))
-                                )
-                            }
-                        </CardPosters>
+                                            <div key={result.id}>
+                                                <PostersResult 
+                                                    image={result.poster_path}
+                                                    altTitle={result.title}
+                                                    infos={result.id}
+                                                />
+                                            </div>
+                                        ))
+                                    )
+                                }
+                            </CardPosters>
 
-                        <footer>
-                            <ReactPagination
-                                lastPageText={'18'}
-                                firstPageText={'1'}
-                                activePage={pageNumber}
-                                itemsCountPerPage={1}
-                                totalItemsCount={18}
-                                containerClassName={"pagination"}
-                                pageRangeDisplayed={5}
-                                onChange={handlePageChange.bind()}
-                            />
-                        </footer>
-                    </div>
-                ))
-            }
-        </div>
+                            <footer>
+                                <ReactPagination
+                                    lastPageText={'18'}
+                                    firstPageText={'1'}
+                                    activePage={pageNumber}
+                                    itemsCountPerPage={1}
+                                    totalItemsCount={18}
+                                    containerClassName={"pagination"}
+                                    pageRangeDisplayed={5}
+                                    onChange={handlePageChange.bind()}
+                                />
+                            </footer>
+                        </div>
+                    ))
+                }
+            </Pulse>
+        </Container>
     )
 }

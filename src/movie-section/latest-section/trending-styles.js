@@ -7,3 +7,9 @@ export const CardPosters = Styled.div `
 
     padding-top: 5rem;
 `;
+
+export const Container = Styled.div `
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+`

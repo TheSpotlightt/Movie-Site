@@ -4,6 +4,8 @@ import InfoPage from './movies-info-page';
 import { Iframe} from './styles';
 import ImageGallery from '../image-gallery/gallery';
 
+import { ZoomInDown } from 'animate-css-styled-components';
+
 export default function GetInfos(props) {
     const [moviesInfo, setMoviesInfo] = useState([]);
     const moviesInfoArray = [moviesInfo];
@@ -67,12 +69,13 @@ export default function GetInfos(props) {
 
                                 index.results.map(result => (
                                     <div key={result.id}>
-
-                                        <Iframe title="Trailer" 
-                                            src={`https://www.youtube.com/embed/${result.key}`} 
-                                            frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                            allowFullScreen
-                                        />
+                                        <ZoomInDown duration=".8s" delay=".5s">
+                                            <Iframe title="Trailer" 
+                                                src={`https://www.youtube.com/embed/${result.key}`} 
+                                                frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                                allowFullScreen
+                                            />
+                                        </ZoomInDown>
                                     </div>
                                 ))
                             )
