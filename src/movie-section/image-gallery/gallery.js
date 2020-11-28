@@ -29,8 +29,8 @@ export default function ImageGallery (props) {
         )()
     }, [postersID])
 
-    const responsive = {
-        0: { items: 1},
+    const responsive = { // using the AliceCarousel responsiveness,
+        0: { items: 1}, // how many items show on each screen size
         1024: { items: 1 }
     }
 
