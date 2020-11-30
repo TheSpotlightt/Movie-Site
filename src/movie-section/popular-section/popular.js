@@ -5,9 +5,10 @@ import PostersResult from '../movie-posters/movie-posters';
 import ChooseSection from '../choose-section/choose-section';
 
 import '../footer/styles.css'
-import { CardPosters , Container} from './popular-styles';
+import { CardPosters } from './popular-styles';
 
-import { Pulse, FadeInDown } from 'animate-css-styled-components';
+import FadeInDown from '../../animations/fade-In-Down';
+import Pulse from '../../animations/pulse';
 
 export default function PopularMovies() {
     const [popular, setPopular] = useState('');
@@ -32,9 +33,9 @@ export default function PopularMovies() {
     }
     
     return (
-        <Container className="posters">
-            <FadeInDown duration=".8s" delay=".3s">
-                <ChooseSection /> 
+        <div className="posters">
+            <FadeInDown duration=".8s" delay="0s">
+                <ChooseSection />
             </FadeInDown>
         
             <Pulse duration=".8s" delay="0s">
@@ -77,6 +78,6 @@ export default function PopularMovies() {
                         ))
                     }
             </Pulse>
-        </Container>
+        </div>
     )
 }

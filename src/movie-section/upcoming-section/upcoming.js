@@ -4,9 +4,10 @@ import ReactPagination from 'react-js-pagination';
 import PostersResult from '../movie-posters/movie-posters';
 import ChooseSection from '../choose-section/choose-section';
 
-import { CardPosters, Container} from './upcoming-styles';
+import { CardPosters } from './upcoming-styles';
 
-import { Pulse, FadeInDown } from 'animate-css-styled-components';
+import FadeInDown from '../../animations/fade-In-Down';
+import Pulse from '../../animations/pulse';
 
 export default function UpComingMovies() {
     const [upComing, setUpComing] = useState('');
@@ -30,8 +31,8 @@ export default function UpComingMovies() {
     }
 
     return (
-        <Container className="posters">
-            <FadeInDown duration=".8s" delay=".3s">
+        <div className="posters">
+            <FadeInDown duration=".8s" delay="0s">
                 <ChooseSection />
             </FadeInDown>
             
@@ -72,6 +73,6 @@ export default function UpComingMovies() {
                     ))
                 }
             </Pulse>
-        </Container>
+        </div>
     )
 }

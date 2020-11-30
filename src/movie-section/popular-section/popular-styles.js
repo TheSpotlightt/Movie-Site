@@ -11,5 +11,4 @@ export const CardPosters = Styled.div `
 export const Container = Styled.div `
     overflow-x: hidden;
     overflow-y: hidden;
-
 `

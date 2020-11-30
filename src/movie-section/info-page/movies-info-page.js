@@ -3,26 +3,28 @@ import { Paragraph, Title, Img, Header } from './styles';
 
 import SearchMovies from '../choose-section/search-section';
 import Home from '../choose-section/home';
-import { ZoomInDown, LightSpeedIn } from 'animate-css-styled-components';
+
+import ZoomInDown from '../../animations/zoom-in-down';
+import LightSpeedIn from '../../animations/Light-Speed-In';
 
 export default function InfoPage(props) {
 
     return (
         <div>
-            <LightSpeedIn duration=".8s" delay=".5s">
+            <LightSpeedIn duration=".8s" delay="0s">
                 <Header>
                     <Home />
                     <SearchMovies />
                 </Header>
             </LightSpeedIn>
 
-            <ZoomInDown duration=".8s" delay=".5s">
+            <ZoomInDown duration=".7s" delay="0s">
                 <Img 
                     src={`https://image.tmdb.org/t/p/w300/${props.posters}`} alt={props.altTitle}
                 />
             </ZoomInDown>
 
-            <LightSpeedIn duration=".8s" delay=".5s">
+            <LightSpeedIn duration=".9s" delay="0s">
                 <section>
                     <Title>{props.title}</Title>
                     <Paragraph>{props.overview}</Paragraph>

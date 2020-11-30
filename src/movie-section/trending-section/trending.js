@@ -3,9 +3,10 @@ import PostersResult from '../movie-posters/movie-posters';
 
 import ChooseSection from '../choose-section/choose-section';
 
-import { CardPosters, Container } from './trending-styles';
+import { CardPosters } from './trending-styles';
 
-import { Pulse, FadeInDown } from 'animate-css-styled-components';
+import FadeInDown from '../../animations/fade-In-Down';
+import Pulse from '../../animations/pulse';
 
 export default function TrendingMovies() {
     const [trending, setTrending] = useState('');
@@ -24,8 +25,8 @@ export default function TrendingMovies() {
     }, []);
 
     return (
-        <Container className="posters">
-            <FadeInDown duration=".8s" delay=".3s">
+        <div className="posters">
+            <FadeInDown duration=".8s" delay="0s">
                 <ChooseSection />
             </FadeInDown>
 
@@ -56,6 +57,6 @@ export default function TrendingMovies() {
                     ))
                 }
             </Pulse>
-        </Container>
+        </div>
     )
 }

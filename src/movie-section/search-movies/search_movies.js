@@ -39,9 +39,9 @@ export default function SearchMovies(props) {
 
     return (
     <div>
-        <form>
+        <label htmlFor="searchMovie">
             <SearchMovieInput type="search" onChange={handleInputSearch} placeholder="Search by Movie Title" className="inputClass" autoFocus/>
-        </form>
+        </label>
 
         {
             moviesArray.map((c, index) => ( 
