@@ -2,7 +2,7 @@ import React from 'react';
 import { Paragraph, Title, Img, Header } from './styles';
 
 import SearchMovies from '../choose-section/search-section';
-import Home from '../choose-section/home';
+import Home from '../../components/pages/home';
 
 import ZoomInDown from '../../animations/zoom-in-down';
 import LightSpeedIn from '../../animations/Light-Speed-In';

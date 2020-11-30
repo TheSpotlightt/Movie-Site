@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import HomeIcon from '../../images/home.svg';
 
-import { ImgHome } from './styles';
+import { ImgHome } from '../../movie-section/choose-section/styles';
 
 export default function Home () {
     return (
