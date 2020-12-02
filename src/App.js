@@ -41,7 +41,6 @@ export default function App() {
   const [authenticated, setAuthenticated] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  
   useEffect(() => {
     auth().onAuthStateChanged(user => {
       if(user) {

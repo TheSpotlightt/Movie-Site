@@ -5,7 +5,7 @@ export const PostersImg = Styled.img `
     &:hover {
         transform: scale(1.1);    
         transition: all 400ms ease-out;
-        filter: drop-shadow(30px 10px 4px #555454);
+        filter: drop-shadow(30px 10px 4px #000);
     }
 
     @media only screen and (max-width: 800px) {

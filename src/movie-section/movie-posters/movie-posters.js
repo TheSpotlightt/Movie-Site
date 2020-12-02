@@ -11,7 +11,7 @@ export default function PostersResult (props) {
         <div>
             <Link to={{
                 pathname: `/movie/${movieID}`,
-                state: `${movieID}`
+                state:{ infos: `${movieID}` }
             }}>
                 <PostersImg src={`https://image.tmdb.org/t/p/w300/${posters}`} alt={altTitle} />
             </Link>

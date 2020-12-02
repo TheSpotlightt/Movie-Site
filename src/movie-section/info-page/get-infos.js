@@ -10,7 +10,7 @@ import WatchList from '../../components/pages/watch-list';
 export default function GetInfos(props) {
     const [moviesInfo, setMoviesInfo] = useState([]);
     const moviesInfoArray = [moviesInfo];
-    const movieID = props.location.state;
+    const movieID = props.location.state.infos;
     const [poster, getPoster] = useState([]);
 
     useEffect(() => {
