@@ -19,7 +19,7 @@ export const Container = Styled.div `
     position: sticky;
     top: 0rem;
 
-    background-color: #fff;
+    background-color: #242526;
 `
 
 export const ImgSearch = Styled.img `

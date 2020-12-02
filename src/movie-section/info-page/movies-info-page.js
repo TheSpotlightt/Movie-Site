@@ -9,6 +9,7 @@ import LightSpeedIn from '../../animations/Light-Speed-In';
 
 export default function InfoPage(props) {
 
+
     return (
         <div>
             <LightSpeedIn duration=".8s" delay="0s">

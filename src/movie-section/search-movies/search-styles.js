@@ -14,7 +14,7 @@ export const SearchMovieInput = Styled.input `
 
     border-radius: 5rem;
     border: .1rem solid black;
-
+    background-color: #3A3B3C;
     &::placeholder {
         font-size: 1.5rem;
         padding-left: 5rem;
@@ -23,12 +23,12 @@ export const SearchMovieInput = Styled.input `
     &:focus {
         border: .2rem solid #918888;
         outline: none;
-        background-color: #FFFFFF;
+        background-color: #3A3B3C;
     }
 `;
 
 export const TileMovie = Styled.p `
     text-align: center;
-
+    color: #fff;
     font-size: 1.8rem;
 `;

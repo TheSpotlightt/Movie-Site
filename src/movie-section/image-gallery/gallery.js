@@ -8,7 +8,6 @@ import "react-alice-carousel/lib/alice-carousel.css";
 export default function ImageGallery (props) {
     const [images, getImages] = useState([]);
     const postersID = props.postersID;
-    console.log(postersID)
 
     useEffect(() => {
         ( 

@@ -3,11 +3,14 @@ import Styled from 'styled-components';
 export const Title = Styled.h1 `
     font-size: 3rem;
 
-    margin-top: 5rem;;
+    margin-top: 5rem;
+    color: #fff;
+
 `;
 
 export const Paragraph = Styled.p `
     font-size: 1.8rem;
+    color: #fff;
 `
 
 export const Img = Styled.img `
@@ -112,5 +115,5 @@ export const Header = Styled.header `
     position: sticky;
     top: 0rem;
 
-    background-color: #ffffff;
+    background-color: #242526;
 `;

@@ -13,35 +13,35 @@ export default function ChooseSection() {
 
                 <NavLink to="/popular" 
                 activeStyle={{
-                    color: "#2b2c36", 
+                    color: "#fefefe", 
                     fontWeight: "bold" 
                 }} 
                 style={{
-                    color: "#615656",
+                    color: "#E7E9ED",
                     paddingRight: 20, 
                     textDecoration: 'none'
                 }}  >Popular</NavLink>
 
                 <NavLink to="/trending" 
                 activeStyle={{
-                    color: "#2b2c36", 
+                    color: "#fefefe", 
                     fontWeight: "bold"
                 }} 
 
                 style={{
-                    color: "#615656",
+                    color: "#E7E9ED",
                     paddingRight: 20, 
                     textDecoration: 'none'
                 }}>Trending</NavLink>
 
                 <NavLink to="/upcoming" 
                 activeStyle={{
-                    color: "#2b2c36", 
+                    color: "#fefefe", 
                     fontWeight: "bold",
                 }}
 
                 style={{
-                    color: "#615656",
+                    color: "#E7E9ED",
                     paddingRight: 20, 
                     textDecoration: 'none',
                 }}>UpComing</NavLink>
