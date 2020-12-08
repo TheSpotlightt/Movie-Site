@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import InfoPage from './movies-info-page';
+import SimilarMovies from '../../components/similar-movies/similar';
 
-import { Iframe} from './styles';
+import { Iframe } from './styles';
 import ImageGallery from '../image-gallery/gallery';
 import ZoomInDown from '../../animations/zoom-in-down';
 
@@ -94,6 +95,10 @@ export default function GetInfos(props) {
 
             <ImageGallery 
                 postersID={movieID}
+            />
+
+            <SimilarMovies 
+                id={movieID}
             />
         </div>  
     )

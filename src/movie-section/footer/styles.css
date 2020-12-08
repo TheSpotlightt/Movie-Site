@@ -8,8 +8,8 @@
 }
 
 .pagination > .active > a{
-    background-color: black ;
-    border-color: #000 ;
+    background-color: #242526 ;
+    border-color: #DBD8E2 ;
     color: #fff;
   }
   .pagination > li > a{
@@ -23,11 +23,11 @@
   }
   .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
     background-color: black ;
-    border-color: black;
+    border-color: #DBD8E2;
     outline: none ;
   }
   .pagination > li > a, .pagination > li > span{
-    color: black;
+    color: #DBD8E2;
   }
   .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span{
     border-radius: unset

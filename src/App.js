@@ -14,6 +14,7 @@ import { auth } from './components/services/firebase';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 function PrivateRoute({ component: Component, authenticated, ...res }) {
+
   return (
     <Route
       { ...res }
@@ -26,6 +27,7 @@ function PrivateRoute({ component: Component, authenticated, ...res }) {
 }
 
 function PublicRoute({ component: Component, authenticated, ...res }) {
+
   return (
     <Route 
       {...res}
@@ -40,7 +42,7 @@ function PublicRoute({ component: Component, authenticated, ...res }) {
 export default function App() {
   const [authenticated, setAuthenticated] = useState(true);
   const [loading, setLoading] = useState(false);
-
+  
   useEffect(() => {
     auth().onAuthStateChanged(user => {
       if(user) {
@@ -71,6 +73,8 @@ export default function App() {
         <PrivateRoute path="/userPage"  authenticated={authenticated} component={UserPage} />
         <PublicRoute path="/signup"  authenticated={authenticated} component={SignUp} />
         <PublicRoute path="/signin"  authenticated={authenticated} component={SignIn} />
+        <Route path="/signin"  authenticated={authenticated} component={SignIn} />
+
 
       </Switch>
     </Router>

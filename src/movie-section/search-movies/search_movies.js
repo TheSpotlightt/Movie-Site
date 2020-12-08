@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import PostersResult from '../movie-posters/movie-posters';
+import NoImagePosters from '../movie-posters/no-posters';
 
+import NoImage from '../../images/no_image.png';
 import { SearchMovieContainer, SearchMovieInput, TileMovie } from './search-styles';
 
 function Result(props) {
@@ -56,12 +58,21 @@ export default function SearchMovies(props) {
                                         <Result 
                                             value={result.title}
                                         />
-
-                                        <PostersResult 
-                                            image={result.poster_path}
-                                            altTitle={result.title}
-                                            infos={result.id}
-                                        />
+                                        {
+                                            result.poster_path
+                                            ?
+                                            <PostersResult 
+                                                image={result.poster_path}
+                                                altTitle={result.title}
+                                                infos={result.id}
+                                            />
+                                            :
+                                            <NoImagePosters 
+                                                image={NoImage}
+                                                alt={result.title}
+                                                infos={result.id}
+                                            />
+                                        }
                                     </div>
                                 ))
                             )

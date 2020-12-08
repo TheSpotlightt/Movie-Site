@@ -10,6 +10,7 @@ import { CardPosters } from './popular-styles';
 import FadeInDown from '../../animations/fade-In-Down';
 import Pulse from '../../animations/pulse';
 
+
 export default function PopularMovies() {
     const [popular, setPopular] = useState('');
     const [pageNumber, setPageNumber] = useState(1);
