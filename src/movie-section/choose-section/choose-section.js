@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { ChooseLinksStyles, Container } from './styles';
 
@@ -47,11 +47,6 @@ export default function ChooseSection() {
                 }}>UpComing</NavLink>
 
             </ChooseLinksStyles>
-                <button>
-                    <Link to="/userPage" >
-                        SignIn
-                    </Link>
-                </button>
             <SearchMovies />
         </Container>
     )

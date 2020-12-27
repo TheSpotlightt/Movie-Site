@@ -115,5 +115,5 @@ export const Header = Styled.header `
     position: sticky;
     top: 0rem;
 
-    background-color: #242526;
+    background-color: #464747;
 `;

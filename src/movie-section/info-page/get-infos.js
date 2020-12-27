@@ -6,8 +6,6 @@ import { Iframe } from './styles';
 import ImageGallery from '../image-gallery/gallery';
 import ZoomInDown from '../../animations/zoom-in-down';
 
-import WatchList from '../../components/pages/watch-list';
-
 export default function GetInfos(props) {
     const [moviesInfo, setMoviesInfo] = useState([]);
     const moviesInfoArray = [moviesInfo];
@@ -64,11 +62,6 @@ export default function GetInfos(props) {
                     </div>
                 ))
             }
-
-            <WatchList 
-                id={movieID}
-                poster={poster}
-            />
 
             {
                 trailerArray.map((index, key) => (

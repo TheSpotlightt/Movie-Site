@@ -19,13 +19,14 @@ export const Container = Styled.div `
     position: sticky;
     top: 0rem;
 
-    background-color: #242526;
+    background-color: #464747;
 `
 
 export const ImgSearch = Styled.img `
-    margin-top: 3rem;
-    margin-left: 1rem;
-    width: 2.5rem;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    width: 3rem;
+    color: #fff;
 `;
 
 export const ImgHome = Styled.img `
