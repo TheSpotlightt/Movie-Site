@@ -10,7 +10,6 @@ export default function GetInfos(props) {
     const [moviesInfo, setMoviesInfo] = useState([]);
     const moviesInfoArray = [moviesInfo];
     const movieID = props.location.state.infos;
-    const [poster, getPoster] = useState([]);
 
     useEffect(() => {
         (        
@@ -19,7 +18,6 @@ export default function GetInfos(props) {
                 .then(res => res.json())
                 .then(res => {
                     setMoviesInfo(res);
-                    getPoster(res.poster_path)
                 })
                 .catch(error => console.log(error));
             }
