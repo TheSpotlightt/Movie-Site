@@ -6,6 +6,7 @@ export const CardPosters = Styled.div `
     justify-content: space-between;
 
     padding-top: 5rem;
+    margin-bottom: 2rem;
 `;
 
 export const Container = Styled.div `

@@ -10,6 +10,7 @@ import { CardPosters } from './popular-styles';
 import FadeInDown from '../../animations/fade-In-Down';
 import Pulse from '../../animations/pulse';
 
+import Footer from '../footer/footer';
 
 export default function PopularMovies() {
     const [popular, setPopular] = useState('');
@@ -61,20 +62,20 @@ export default function PopularMovies() {
                                     }
                                 </CardPosters>
                                 
-                                <footer>
-                                    <ReactPagination
-                                        prevPageText={'Prev'}
-                                        nextPageText={'Next'}
-                                        lastPageText={'500'}
-                                        firstPageText={'1'}
-                                        activePage={pageNumber}
-                                        itemsCountPerPage={1}
-                                        totalItemsCount={500}
-                                        containerClassName={"pagination"}
-                                        pageRangeDisplayed={5}
-                                        onChange={handlePageChange.bind()}
-                                    />
-                                </footer>
+                                <ReactPagination
+                                    prevPageText={'Prev'}
+                                    nextPageText={'Next'}
+                                    lastPageText={'500'}
+                                    firstPageText={'1'}
+                                    activePage={pageNumber}
+                                    itemsCountPerPage={1}
+                                    totalItemsCount={500}
+                                    containerClassName={"pagination"}
+                                    pageRangeDisplayed={5}
+                                    onChange={handlePageChange.bind()}
+                                />
+
+                                <Footer />
                             </div>
                         ))
                     }

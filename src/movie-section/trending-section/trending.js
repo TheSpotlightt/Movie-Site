@@ -8,6 +8,8 @@ import { CardPosters } from './trending-styles';
 import FadeInDown from '../../animations/fade-In-Down';
 import Pulse from '../../animations/pulse';
 
+import Footer from '../footer/footer';
+
 export default function TrendingMovies() {
     const [trending, setTrending] = useState('');
 
@@ -57,6 +59,7 @@ export default function TrendingMovies() {
                     ))
                 }
             </Pulse>
+            <Footer/>
         </div>
     )
 }

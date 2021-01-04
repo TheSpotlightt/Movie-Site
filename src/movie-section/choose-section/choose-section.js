@@ -45,9 +45,10 @@ export default function ChooseSection() {
                     paddingRight: 20, 
                     textDecoration: 'none',
                 }}>UpComing</NavLink>
-
             </ChooseLinksStyles>
-            <SearchMovies />
+            <div>
+                <SearchMovies />
+            </div>
         </Container>
     )
 }

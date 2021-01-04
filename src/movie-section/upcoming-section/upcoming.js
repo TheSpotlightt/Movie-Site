@@ -9,6 +9,8 @@ import { CardPosters } from './upcoming-styles';
 import FadeInDown from '../../animations/fade-In-Down';
 import Pulse from '../../animations/pulse';
 
+import Footer from '../footer/footer';
+
 export default function UpComingMovies() {
     const [upComing, setUpComing] = useState('');
     const [pageNumber, setPageNumber] = useState(1);
@@ -57,18 +59,18 @@ export default function UpComingMovies() {
                                 }
                             </CardPosters>
 
-                            <footer>
-                                <ReactPagination
-                                    lastPageText={'18'}
-                                    firstPageText={'1'}
-                                    activePage={pageNumber}
-                                    itemsCountPerPage={1}
-                                    totalItemsCount={18}
-                                    containerClassName={"pagination"}
-                                    pageRangeDisplayed={5}
-                                    onChange={handlePageChange.bind()}
-                                />
-                            </footer>
+                            <ReactPagination
+                                lastPageText={'18'}
+                                firstPageText={'1'}
+                                activePage={pageNumber}
+                                itemsCountPerPage={1}
+                                totalItemsCount={18}
+                                containerClassName={"pagination"}
+                                pageRangeDisplayed={5}
+                                onChange={handlePageChange.bind()}
+                            />
+
+                            <Footer />
                         </div>
                     ))
                 }
