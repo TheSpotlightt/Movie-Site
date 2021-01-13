@@ -1,5 +1,7 @@
-import React, { useState, useEffect }from 'react';
+import React from 'react';
 import api from '../../api';
+
+import { Button } from './styles';
 
 export default function AddWatchList (props) {
     const token = JSON.parse(localStorage.getItem('token'));
@@ -15,6 +17,6 @@ export default function AddWatchList (props) {
     }
 
     return (
-        <button onClick={handleButton}> Save to watch list </button>
+        <Button onClick={handleButton}> Save to watch list </Button>
     )
 }

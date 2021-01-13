@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import api from '../../api';
+import { Link } from 'react-router-dom';
+
+import { Container, Title, Form, Input, SubmitButton, SignUpPara } from './styles/login-styles';
 
 export default function SignUp () {
     const [email, getEmail] = useState('');
@@ -36,11 +38,12 @@ export default function SignUp () {
     localStorage.setItem('token', JSON.stringify(userToken))
 
     return (
-            <div>
-                <form
+            <Container>
+                <Title> Login </Title>
+                <Form
                     onSubmit={handleSubmit}
                 >
-                    <input 
+                    <Input 
                         type="email"  
                         placeholder="Email" 
                         name="email" 
@@ -48,16 +51,19 @@ export default function SignUp () {
                         onChange={handleChangeEmail} 
                     />
 
-                    <input 
+                    <Input 
                         type="password" 
                         placeholder="Password" 
                         name="password" 
                         autoComplete='true' 
                         onChange={handleChangePassword} 
                     />
-                    <button type="submit"> Submit</button>
-                </form>
-            </div>
+                    <SubmitButton type="submit"> Submit</SubmitButton>
+                    <SignUpPara>
+                        Don't have an account? <Link to="/signup" style={{color: '#fefefe'}}>Sign up</Link>
+                    </SignUpPara>
+                </Form>
+            </Container>
     )
 }
 

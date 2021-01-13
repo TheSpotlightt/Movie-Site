@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import api from '../../api';
+import { Link } from 'react-router-dom';
+
+import { Container, Title, Form, Input, SubmitButton, Para } from './styles/signup-styles';
 
 export default function SignUp () {
     const [email, getEmail] = useState('');
@@ -42,12 +44,12 @@ export default function SignUp () {
     localStorage.setItem('token', JSON.stringify(userToken))
 
     return (
-        <div>
-            <form
+        <Container>
+            <Title> Create an Account </Title>
+            <Form
                 onSubmit={handleSubmit}
             >
-            
-                <input 
+                <Input 
                     type="text" 
                     placeholder="Name" 
                     name="userName" 
@@ -55,7 +57,7 @@ export default function SignUp () {
                     onChange={handleChangeUserName} 
                 />
                 
-                <input 
+                <Input 
                     type="number" 
                     placeholder="age" 
                     name="userAge" 
@@ -63,7 +65,7 @@ export default function SignUp () {
                     onChange={handleUserAge} 
                 />
 
-                <input 
+                <Input 
                     type="email"  
                     placeholder="Email" 
                     name="email" 
@@ -71,16 +73,17 @@ export default function SignUp () {
                     onChange={handleChangeEmail} 
                 />
 
-                <input 
+                <Input 
                     type="password" 
                     placeholder="Password" 
                     name="password" 
                     autoComplete='true' 
                     onChange={handleChangePassword} 
                 />
-                <button type="submit"> Submit</button>
-            </form>
-        </div>
+                <SubmitButton type="submit"> Submit</SubmitButton>
+                <Para> Already have an account? <Link to='/login' style={{color: '#fefefe'}}>Login</Link> </Para>
+            </Form>
+        </Container>
     )
 }
 

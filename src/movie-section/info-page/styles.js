@@ -109,7 +109,7 @@ export const Iframe = Styled.iframe `
 export const Header = Styled.header `
     display: flex;
     justify-content: space-between;
-
+    align-items: center;
     border-bottom: .1rem solid black;
 
     position: sticky;

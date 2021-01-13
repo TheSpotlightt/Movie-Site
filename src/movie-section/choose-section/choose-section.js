@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-import { ChooseLinksStyles, Container } from './styles';
+import { ChooseLinksStyles, Container, LoginButton, ContainerLeft } from './styles';
 
 import SearchMovies from './search-section';
 
@@ -46,14 +46,14 @@ export default function ChooseSection() {
                     textDecoration: 'none',
                 }}>UpComing</NavLink>
             </ChooseLinksStyles>
-            <div>
-                <SearchMovies />
+            <ContainerLeft>
                 <Link to='/login'>
-                    <button>
+                    <LoginButton>
                         Login
-                    </button>
+                    </LoginButton>
                 </Link>
-            </div>
+                <SearchMovies />
+            </ContainerLeft>
         </Container>
     )
 }

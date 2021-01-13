@@ -3,18 +3,12 @@ import { Link } from 'react-router-dom';
 import Posters from '../../movie-section/movie-posters/movie-posters';
 import api from '../../api';
 
+import Home from './home';
+
+import { Header, Title, LogoutButton } from './styles/profile-styles';
+
 export default function UserProfile () {
     const [watchList, getWatchList] = useState([]);
-    const token = JSON.parse(localStorage.getItem('token'));
-
-    useEffect(() => {
-        (
-            async () => {
-                await api.get('users/me')
-                .then(res => console.log(res));
-            }
-        )()
-    }, []);
 
     useEffect(() => {
         (
@@ -33,12 +27,13 @@ export default function UserProfile () {
 
     return (
         <div>
-            <header>
-                <h1> User Profile </h1>
+            <Header>
+                <Home />
+                <Title> Your Watch List </Title>
                 <Link to="/popular">
-                    <button type="submit" onClick={handleLogout}>Logout</button>
+                    <LogoutButton type="submit" onClick={handleLogout}>Logout</LogoutButton>
                 </Link>
-            </header>
+            </Header>
                 {
                     watchList.map((index, key) => (
                         <div key={key}>
