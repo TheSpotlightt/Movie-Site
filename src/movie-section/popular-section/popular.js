@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactPagination from 'react-js-pagination';
-
 import PostersResult from '../movie-posters/movie-posters';
 import ChooseSection from '../choose-section/choose-section';
-
 import '../footer/styles.css'
 import { CardPosters } from './popular-styles';
 
@@ -15,7 +13,6 @@ import Footer from '../footer/footer';
 export default function PopularMovies() {
     const [popular, setPopular] = useState('');
     const [pageNumber, setPageNumber] = useState(1);
-
     const popularArray = [popular];
 
     useEffect(() => {
