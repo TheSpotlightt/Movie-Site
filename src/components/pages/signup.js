@@ -38,6 +38,8 @@ export default function SignUp () {
         .then(res => res.data)
         .then(res => getUserToken(res.token))
         .catch(error => console.log(error))
+
+        window.location.reload();
     }
     localStorage.setItem('token', JSON.stringify(userToken))
 
