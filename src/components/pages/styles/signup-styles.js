@@ -3,12 +3,21 @@ import styled from 'styled-components';
 export const Container = styled.div `
     margin-top: 5rem;
     padding-bottom: 15rem;
+
+    @media only screen and (max-width: 700px) {
+        padding-bottom: 5rem;
+    }
 `;
 
 export const Title = styled.h1 `
     color: #fefefe;
     font-size: 3.5rem;
     margin-left: 68.5rem;
+
+    @media only screen and (max-width: 700px) {
+        margin-left: 8rem;
+        font-size: 1.9rem;
+    }
 `
 
 export const Form = styled.form `
@@ -18,6 +27,14 @@ export const Form = styled.form `
     margin-left: 55rem;
     margin-top: 2rem;
     margin-bottom: 5rem;
+
+    @media only screen and (max-width: 700px) {
+        padding: 3rem;
+        width: 35rem;
+        margin-left: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 5rem;
+    }
 `;
 
 export const Input = styled.input `
@@ -37,6 +54,11 @@ export const Input = styled.input `
 
     &:focus {
         border: .1rem solid black;
+    }
+
+    @media only screen and (max-width: 700px) {
+        width: 25rem;
+        margin-left: 0;
     }
 `;
 
@@ -58,12 +80,25 @@ export const SubmitButton = styled.button `
         background-color: #6c58b4;
         transition: 800ms;
     }
+
+    
+    @media only screen and (max-width: 700px) {
+        margin-left: 0rem;
+        margin-top: 2rem;
+        margin-bottom: 5rem;
+        width: 25rem;
+    }
 `;
 
 export const Para = styled.p `
     font-size: 1.5rem;
-    padding-left: 12rem;
+    margin-left: 12rem;
     margin-top: 5rem;
 
     color: #fefefe;
+
+    @media only screen and (max-width: 700px) {
+        margin-left: 2rem;
+        margin-top: 2rem;
+    }
 `;
