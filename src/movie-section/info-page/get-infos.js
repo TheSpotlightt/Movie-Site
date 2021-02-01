@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import {useLocation} from "react-router-dom";
 import InfoPage from './movies-info-page';
 import SimilarMovies from '../../components/similar-movies/similar';
 
