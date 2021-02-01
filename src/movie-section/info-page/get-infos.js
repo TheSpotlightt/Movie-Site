@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {useLocation} from "react-router-dom";
 import InfoPage from './movies-info-page';
 import SimilarMovies from '../../components/similar-movies/similar';
 
@@ -11,7 +12,8 @@ import WatchList from '../../components/add-watch-list/watch-list';
 export default function GetInfos(props) {
     const [moviesInfo, setMoviesInfo] = useState([]);
     const moviesInfoArray = [moviesInfo];
-    const movieID = props.location.state.infos;
+    const locationID = props.location.search;
+    const movieID = locationID.replace('?','');
 
     useEffect(() => {
         (        

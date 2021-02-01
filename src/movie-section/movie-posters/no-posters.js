@@ -15,7 +15,8 @@ export default function PostersResult (props) {
         <div>
             <Link to={{
                 pathname: `/movie/${movieID}`,
-                state:{ infos: `${movieID}` }
+                state:{ infos: `${movieID}` },
+                search: `${movieID}`
             }}>
                 <NoImagePosters src={`${posters}`} alt={altTitle} />
             </Link>
